@@ -1,6 +1,7 @@
 #!/usr/bin/python3
+
 if __name__ == "__main__":
-    """ptint like calculator"""
+    """print like calculator"""
     from calculator_1 import add, sub, mul, div
     
     a = 10
