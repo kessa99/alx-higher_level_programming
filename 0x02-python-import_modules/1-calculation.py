@@ -2,6 +2,7 @@
 
 if __name__ == "__main__":
     """print like calculator"""
+
     from calculator_1 import mul, div, sub, div
     
     a = 10
