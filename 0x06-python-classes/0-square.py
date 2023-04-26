@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 class Square:
-    """Documentation Empty Class"""
+    """Square is an Empty Class"""
     pass
