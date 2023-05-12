@@ -1,9 +1,6 @@
 #!/usr/bin/python3
-def remove_char_at(str, n):
-    if n < 0 or n > len(str):
-        print("{}".format(str))
+def remove_char_at(string, n):
+    if n < 0 or n > len(string):
+        return string
     else:
-        new_str = list(str)
-        new_str.pop(n)
-        j = "".join(new_str)
-        print("{}".format(j))
+        return string[:n] + string[n+1:]
