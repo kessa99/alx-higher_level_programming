@@ -1,2 +1,2 @@
 --show all databases.
-mysql> SHOW DATABASES;
+SHOW DATABASES;
