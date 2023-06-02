@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-write_file(filename="", text="") -
+write_file(filename="", text="")
 You must use the with statement
 You don’t need to manage file permission exceptions.
 Your function should create the file if doesn’t exist.
