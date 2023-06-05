@@ -13,13 +13,17 @@
     You don’t need to manage file permissions / exceptions.
 """
 import sys
-from 5-save_to_json_file.py import save_to_json_file
-from 6-load_from_json_file.py import load_from_json_file
 import json
+import os.path
 
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 my_list = []
+
+if os.path.exists("add_item.json"):
+    list_of_json = load_from_json_file("add_item.json")
+
 for arg in sys.argv[1:]:
     my_list.append(arg)
 
 save_to_json_file(my_list, 'add_item.json')
-load_from_json_file('add_item.json')
