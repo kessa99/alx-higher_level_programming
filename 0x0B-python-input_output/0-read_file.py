@@ -5,6 +5,8 @@
     You don’t need to manage file permission or file doesn't exist exceptions.
     You are not allowed to import any module
 """
+
+
 def read_file(my_file_0=""):
     """
     Read a file
