@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-    Write a function that writes an Object 
-    to a text file, using a JSON representation:
+    Write a function that writes an Object
+    to a text file, using a JSON representationi:
 
     Prototype: def save_to_json_file(my_obj, filename):
     You must use the with statement
@@ -16,5 +16,5 @@ def save_to_json_file(my_obj, filename):
     Open file
     save in json
     """
-    with open(filename, 'w', encoding="utf-8"):
-        json.dumps(my_obj)
+    with open(filename, 'w', encoding="utf-8") as f:
+        json.dumps(my_obj, f)
