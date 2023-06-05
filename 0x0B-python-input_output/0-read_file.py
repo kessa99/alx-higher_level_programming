@@ -13,4 +13,4 @@ def read_file(my_file_0=""):
     """
     with open('my_file_0.txt', 'r', encoding="utf-8") as files:
         show = files.read()
-        print(show)
+        print(show, end="")
