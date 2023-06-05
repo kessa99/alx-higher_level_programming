@@ -1,4 +1,4 @@
-#!/usr/bin/pythoni3
+#!/usr/bin/python3
 import json
 """
 Prototype: def to_json_string(my_obj)
