@@ -1,10 +1,10 @@
 #!/usr/bin/python3
+"""
+    Prototype: def to_json_string(my_obj)
+    You don’t need to manage exceptions
+    if the object can’t be serialized.
+"""
 import json
-"""
-Prototype: def to_json_string(my_obj)
-You don’t need to manage exceptions
-if the object can’t be serialized.
-"""
 
 
 def to_json_string(my_dict):
