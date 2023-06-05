@@ -7,10 +7,10 @@
 """
 
 
-def read_file(my_file_0=""):
+def read_file(filename=""):
     """
     Read a file
     """
-    with open('my_file_0.txt', 'r', encoding="utf-8") as files:
+    with open('filename', 'r', encoding="utf-8") as files:
         show = files.read()
         print(show, end="")
