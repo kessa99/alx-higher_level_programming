@@ -18,20 +18,22 @@
 
 class Student:
     """
-    description of dict
+        description of dict
     """
     def __init__(self, first_name, last_name, age):
         """
-        initialiazation
+            initialiazation
         """
+
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self, attrs=None):
         """
-        function for the description
+            function for the description
         """
+
         if attrs is None:
             attrs = self.__dict__.keys()
 
@@ -42,7 +44,7 @@ class Student:
                 value = getattr(self, attr)
 
                 if isinstance(value, (list, str, int, dict, bool)):
-                json_dict[attr] = value
+                    json_dict[attr] = value
             else:
                 json_dict[attr] = None
         return json_dict
