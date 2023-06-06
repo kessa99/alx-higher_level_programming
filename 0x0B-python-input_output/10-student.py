@@ -41,6 +41,8 @@ class Student:
             if attr in self.__dict__:
                 value = getattr(self, attr)
 
-            if isinstance(value, (list, str, int, dict, bool)):
+                if isinstance(value, (list, str, int, dict, bool)):
                 json_dict[attr] = value
+            else:
+                json_dict[attr] = None
         return json_dict
