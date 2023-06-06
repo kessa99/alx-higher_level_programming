@@ -45,6 +45,4 @@ class Student:
 
                 if isinstance(value, (list, str, int, dict, bool)):
                     json_dict[attr] = value
-            else:
-                json_dict[attr] = None
         return json_dict
