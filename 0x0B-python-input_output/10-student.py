@@ -33,12 +33,14 @@ class Student:
         function for the description
         """
         if attrs is None:
-            return self.__dict__
+            attrs = self.__dict__.keys()
 
         json_dict = {}
-        for attrs in self.__dict__:
-            value = getattr(self, attrs)
+        value = None
+        for attr in attrs:
+            if attr in self.__dict__:
+                value = getattr(self, attr)
 
             if isinstance(value, (list, str, int, dict, bool)):
-                json_dict[attrs] = value
+                json_dict[attr] = value
         return json_dict
