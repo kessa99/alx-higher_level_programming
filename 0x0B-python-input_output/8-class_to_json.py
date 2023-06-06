@@ -8,7 +8,6 @@
 """
 
 
-
 def class_to_json(obj):
     """
         creat a empty dictionnary to save the description
