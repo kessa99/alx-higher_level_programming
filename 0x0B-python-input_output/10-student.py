@@ -32,6 +32,8 @@ class Student:
         """
         function for the description
         """
+        if attrs is None:
+            return self.__dict__
 
         json_dict = {}
         for attrs in self.__dict__:
