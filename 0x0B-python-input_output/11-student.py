@@ -3,6 +3,8 @@
     Write a class Student that defines a
     student by: (based on 10-student.py)
 """
+
+
 class Student:
     """
         Public instance attributes:
@@ -10,7 +12,6 @@ class Student:
         last_name
         age
     """
-
 
     def __init__(self, first_name, last_name, age):
         """
