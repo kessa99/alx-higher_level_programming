@@ -18,7 +18,7 @@ class Student:
         """
 
         if attrs is None:
-            attrs = self.__dict__keys()
+            attrs = self.__dict__.keys()
 
         value = None
         json_dict = {}
