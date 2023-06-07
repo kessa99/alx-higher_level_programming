@@ -38,7 +38,7 @@ class Student:
 
         for attr in attrs:
             if attr in self.__dict__:
-                value = getattr(self. attr)
+                value = getattr(self, attr)
 
                 if isinstance(value, (list, str, int, dict, bool)):
                     json_dict[attr] = value
