@@ -1,8 +1,5 @@
 #!/usr/bin/node
 
-const varC = 'C is fun';
-const varPy = 'Python is cool';
-const varJs = 'JavaScript is amazing”';
-console.log(varC);
-console.log(varPy);
-console.log(varJs);
+console.log('C is fun');
+console.log('Python is cool');
+console.log('JavaScript is amazing');
