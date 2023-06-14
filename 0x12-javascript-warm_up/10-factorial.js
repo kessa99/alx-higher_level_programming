@@ -7,6 +7,7 @@ function fact (n) {
     return n * fact(n - 1);
   }
 }
+
 const arg = parseInt(process.argv[2]);
 const num = isNaN(arg);
 if (num) {
