@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+    connect to server
+"""
 
 import sys
 import subprocess
