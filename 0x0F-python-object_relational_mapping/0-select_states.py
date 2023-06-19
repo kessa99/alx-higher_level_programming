@@ -8,16 +8,11 @@ import subprocess
 import MySQLdb
 
 if __name__ == '__main__':
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-
-    subprocess.call(['mysql', '-u', username, '-p' + 'password', database], stdin=open('0-select_states.sql', 'r'))
-
-    db = MySQLdb.connect(host = 'localhost', port = 3306, user = username,
-        password = password, db = database)
+    db = MySQLdb.connect(host="localhost", port = 3306, user = sys.argv[1],
+        password = sys.argv[2], db = sys.argv[3]
+        )
     cursor = db.cursor()
-    query = "SELECT *FROM states ORDER BY states.id"
+    query = "SELECT *FROM states ORDER BY states.id ASC"
     cursor.execute(query)
 
     result = cursor.ferchall()
