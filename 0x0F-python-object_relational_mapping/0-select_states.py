@@ -1,4 +1,7 @@
+#!/usr/bin/python3
+
 import sys
+import subprocess
 import MySQLdb
 
 if __name__ == '__main__':
@@ -6,10 +9,12 @@ if __name__ == '__main__':
     password = sys.argv[2]
     database = sys.argv[3]
 
-    db = MySQLdb.connect(user = username,
+    subprocess.call(['mysql', '-u', username, '-p' + 'password', database], stdin=open('0-select_states.sql', 'r'))
+
+    db = MySQLdb.connect(host = 'localhost', port = 3306, user = username,
         password = password, db = database)
     cursor = db.cursor()
-    query = "SELECT *FROM states ORDER BY id ASC"
+    query = "SELECT *FROM states ORDER BY states.id"
     cursor.execute(query)
 
     result = cursor.ferchall()
