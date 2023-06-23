@@ -4,12 +4,15 @@
 """
 
 import sys
-import subprocess
 import MySQLdb
 
 if __name__ == '__main__':
-    db = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
-        password=sys.argv[2], db=sys.argv[3])
+    usr = sys.argv[1]
+    pwd = sys.argv[2]
+    db_nm = sys.argv[3]
+
+    db = (MySQLdb.connect(host='localhost', port=3306,
+                          user=usr, password=pwd, db=db_nm))
     cursor = db.cursor()
     query = "SELECT *FROM states ORDER BY states.id ASC"
     cursor.execute(query)

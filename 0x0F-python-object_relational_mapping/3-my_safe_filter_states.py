@@ -1,35 +1,29 @@
 #!/usr/bin/python3
-"""
-    SQL injection
-"""
+"""SQL injection"""
 
-import sys
 import MySQLdb
+import sys
+
 
 if __name__ == '__main__':
-    """
-    first open conect database
-    """
-    db = MySQLdb.connect(host='localhost', port=3306, user=sys.argv[1], password=sys.argv[2], db=sys.argv[3])
+    """first open conect database"""
+    usr = sys.argv[1]
+    pwd = sys.argv[2]
+    db_nm = sys.argv[3]
 
-    """
-    creat the cursor
-    """
+    db = MySQLdb.connect(host='localhost', port=3306,
+                         user=usr, password=pwd, db=db_nm)
+
+    """creat the cursor"""
     cursor = db.cursor()
 
-    """
-    creat option of cursor
-    """
+    """creat option of cursor"""
     query = "SELECT *FROM states WHERE name = %s"
 
-    """
-    Executer l'option
-    """
+    """Executer l'option"""
     cursor.execute(query, (sys.argv[4],))
 
-    """
-    creer une boucle pour afficher les elements
-    """
+    """creer une boucle pour afficher les elements"""
     result = cursor.fetchall()
     for row in result:
         print(row)

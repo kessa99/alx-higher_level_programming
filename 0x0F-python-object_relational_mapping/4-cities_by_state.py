@@ -1,20 +1,24 @@
 #!/usr/bin/python3
-"""
-     cities implemetation
-"""
-import sys
+"""Cities by states"""
+
 import MySQLdb
+import sys
 
-if __name__ == '__main__':
+if __name__ == 'main':
+    usr = sys.argv[1]
+    pwd = sys.argv[2]
+    db_nm = sys.argv[3]
 
-    db = MySQLdb.connect(host='localhost' ,port=3306, user=sys.argv[1], password=sys.argv[2], db=sys.argv[3])
-
+    db = MySQLdb.connect(host='localhost', port=3306,
+                         user=usr, password=pwd, db=db_nm)
     cursor = db.cursor()
-    query = "SELECT *FROM cities ORDER BY cities.id ASC;"
+    query = "SELECT cities.id, cities.name, states.name FROM cities, states WHERE states.id=cities.state_id ORDER BY id ASC;"
     cursor.execute(query)
-    result = cursor.fetchall()
+
+    result = db.fetchall()
+
     for row in result:
-        print(row);
+        print(row)
 
     cursor.close()
     db.close()
