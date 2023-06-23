@@ -16,12 +16,13 @@ if __name__ == '__main__':
                          password=pwd, db=db_nm)
     cursor = db.cursor()
 
-    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC"
+    query = "SELECT * FROM states ORDER BY states.id ASC"
     cursor.execute(query)
 
     result = cursor.fetchall()
     for row in result:
-        print(row)
+        if row[1][0] == "N":
+            print(row)
 
     cursor.close()
     db.close()
