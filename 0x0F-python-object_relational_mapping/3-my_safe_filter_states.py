@@ -18,7 +18,7 @@ if __name__ == '__main__':
     cursor = db.cursor()
 
     """creat option of cursor"""
-    query = "SELECT *FROM states WHERE name = %s"
+    query = "SELECT * FROM states WHERE name = %s"
 
     """Executer l'option"""
     cursor.execute(query, (sys.argv[4],))
