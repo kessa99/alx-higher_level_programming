@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Filter element"""
+"""
+    Filter element
+"""
 
 import MySQLdb
 import sys
