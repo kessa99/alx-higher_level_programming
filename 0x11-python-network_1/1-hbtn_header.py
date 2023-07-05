@@ -10,9 +10,9 @@ passed to the script (number or type)
 You must use a with statement
 """
 
+
 import sys
 import urllib.request
-
 url = sys.argv[1]
 with urllib.request.urlopen(url) as response:
     head = response.getheaders()
