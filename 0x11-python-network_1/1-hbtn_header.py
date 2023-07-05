@@ -3,7 +3,6 @@
     You must use the packages urllib and sys
     You must use a with statement
 """
-
 import sys
 import urllib.request
 url = sys.argv[1]
