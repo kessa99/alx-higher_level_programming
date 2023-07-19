@@ -9,7 +9,7 @@ if (num) {
   const size = parseInt(arg);
   let output = '';
   for (let i = 0; i < size; i++) {
-    output += 'x';
+    output += 'X';
   }
   for (let j = 0; j < size; j++) {
     console.log(output);
