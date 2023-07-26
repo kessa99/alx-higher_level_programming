@@ -2,7 +2,6 @@
 """ 
 Cities by states
 """
-
 import MySQLdb
 import sys
 
