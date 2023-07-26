@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-    Your script should take 3 arguments: mysql username
-    You must use the module MySQLdb (import MySQLdb)
-    Your script should connect to a MySQL server running on loc
+    Your script should
+    take 3 arguments
+    mysql username
 """
 
 import MySQLdb
