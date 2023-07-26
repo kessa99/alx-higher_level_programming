@@ -1,8 +1,6 @@
 #!/usr/bin/python3
-"""
-    Your script should
-    take 3 arguments
-    mysql username
+""" Return cities
+join states
 """
 
 import MySQLdb
