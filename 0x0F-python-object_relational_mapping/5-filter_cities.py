@@ -5,7 +5,7 @@ import MySQLdb
 import sys
 
 
-if __name__ == '__main':
+if __name__ == '__main__':
     usr = sys.argv[1]
     pwd = sys.argv[2]
     db_nm = sys.argv[3]
@@ -13,12 +13,14 @@ if __name__ == '__main':
     db = MySQLdb.connect(host='localhost', port=3306,
                          user=usr, password=pwd, db=db_nm)
     cursor = db.cursor()
-    query = "SELECT *FROM cities WHERE name;"
+    query = ("SELECT cities.name FROM cities "
+             "JOIN states ON cities.state_id = states.id "
+             "WHERE states.name = %s")
     cursor.execute(query, (sys.argv[4],))
 
     result = cursor.fetchall()
     for raw in result:
-        print(row)
+        print(raw[0])
 
-    cursor.close();
-    clone.db()
+    cursor.close()
+    db.close()
