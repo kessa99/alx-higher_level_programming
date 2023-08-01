@@ -15,12 +15,13 @@ if __name__ == '__main__':
     cursor = db.cursor()
     query = ("SELECT cities.name FROM cities "
              "JOIN states ON cities.state_id = states.id "
-             "WHERE states.name = %s")
+             "WHERE states.name = %s ORDER BY cities.id ASC")
     cursor.execute(query, (sys.argv[4],))
 
     result = cursor.fetchall()
-    for raw in result:
-        print(raw[0])
-
+    for i in range(len(result)):
+        print(result[i], end='')
+        if i < len(result) - 1:
+            print(', ', end='')
     cursor.close()
     db.close()

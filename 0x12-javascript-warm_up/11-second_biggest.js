@@ -8,9 +8,15 @@ if (process.argv.length > 2) {
     if (process.argv[i] > grd) {
       second = grd;
       grd = process.argv[i];
+    } else {
+       second = process.argv[i];;
     }
   }
-  console.log(second);
+  if (second < grd) {
+    console.log(second);
+  } else {
+    console.log(grd);
+  }
 } else {
   console.log(0);
 }
