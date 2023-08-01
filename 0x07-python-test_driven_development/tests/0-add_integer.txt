@@ -1,0 +1,19 @@
+#Importing the required functon
+>>> from importlib import import_module
+>>> add_integer = import_module('0-add_integer').add_integer
+
+
+>>> add_integer(5, 6)
+11
+>>> add_integer(100)
+198
+>>> try:
+...     add_integer(4, "School")
+... except ValueError as ex:
+...     print(ex.args[0])
+b must be a integer
+>>> try:
+...     add_integer(None)
+... except ValueError as ex:
+...     print(ex.args[0])
+a must be a integer
