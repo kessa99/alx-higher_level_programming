@@ -3,6 +3,7 @@
 
 
 def add_integer(a, b=98):
+    """function to add"""
     if a is None or not isinstance(a, (int, float)):
         raise ValueError("a must be a integer")
     if not isinstance(b, (int, float)):
