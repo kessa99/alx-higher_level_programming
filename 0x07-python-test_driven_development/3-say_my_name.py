@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 """
+write a function that print the correct name
 """
 
 
 def say_my_name(first_name, last_name=""):
     """
+    special function that print the correct sentence
     """
 
     if not isinstance(first_name, str):
