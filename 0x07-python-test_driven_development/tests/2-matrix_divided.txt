@@ -1,0 +1,130 @@
+==============================
+   How matrix_divided work
+==============================
+
+===========
+Importation
+===========
+>>> from importlib import import_module
+>>> matrix_divided = import_module('2-matrix_divided').matrix_divided
+
+
+============
+Valid syntax
+============
+
+>>> matrix = [
+...    [3, 6, 9],
+...    [10, 11, 12]
+... ]
+>>> print(matrix_divided(matrix, 3))
+[[1.0, 2.0, 3.0], [3.33, 3.67, 4.0]]
+>>> print(matrix)
+[[3, 6, 9], [10, 11, 12]]
+
+
+>>> matrix = [
+...    [1.1, -2.2, 3.3],
+...    [4.4, 5.5, -6.6]
+... ]
+>>> print(matrix_divided(matrix, 3))
+[[0.37, -0.73, 1.1], [1.47, 1.83, -2.2]]
+>>> print(matrix)
+[[1.1, -2.2, 3.3], [4.4, 5.5, -6.6]]
+
+>>> matrix = [
+...    [1, -2.2, 3, 4.4, 5],
+...    [-6.5, 7, -8.6, 9.00, 10.999]
+... ]
+>>> print(matrix_divided(matrix, 3))
+[[0.33, -0.73, 1.0, 1.47, 1.67], [-2.17, 2.33, -2.87, 3.0, 3.67]]
+>>> print(matrix)
+[[1, -2.2, 3, 4.4, 5], [-6.5, 7, -8.6, 9.0, 10.999]]
+
+
+                          Invalid Matrix
+                          ================
+>>> matrix = "not a list"
+>>> try:
+...     print(matrix_divided(matrix, 3))
+... except TypeError as ex:
+...     print(ex.args[0])
+matrix must be a matrix (list of lists) of integers/floats
+
+
+>>> matrix = None
+>>> try:
+...     print(matrix_divided(matrix, 3))
+... except TypeError as ex:
+...     print(ex.args[0])
+matrix must be a matrix (list of lists) of integers/floats
+
+
+>>> matrix = []
+>>> try:
+...     print(matrix_divided(matrix, 3))
+... except TypeError as ex:
+...     print(ex.args[0])
+matrix must be a matrix (list of lists) of integers/floats
+
+
+>>> matrix = [1, 2, 3]
+>>> try:
+...     print(matrix_divided(matrix, 3))
+... except TypeError as ex:
+...     print(ex.args[0])
+matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, "not a number", 6]
+... ]
+>>> try:
+...     print(matrix_divided(matrix, 3))
+... except TypeError as ex:
+...     print(ex.args[0])
+matrix must be a matrix (list of lists) of integers/floats
+
+
+                       Invalid Divisor
+                     ===================
+>>> matrix = [
+...     [1, 2, 3, 7],
+...     [4, 5, 6]
+... ]
+>>> try:
+...     print(matrix_divided(matrix, 3))
+... except ValueError as ex:
+...     print(ex.args[0])
+Each row of the matrix must have the same size
+
+
+>>> matrix = [
+...    [3, 6, 9],
+...    [10, 11, 12]
+... ]
+>>> try:
+...     print(matrix_divided(matrix, "not a number"))
+... except TypeError as ex:
+...     print(ex.args[0])
+div must be a number
+
+>>> matrix = [
+...    [3, 6, 9],
+...    [10, 11, 12]
+... ]
+>>> try:
+...     print(matrix_divided(matrix, None))
+... except TypeError as ex:
+...     print(ex.args[0])
+div must be a number
+
+>>> matrix = [
+...    [3, 6, 9],
+...    [10, 11, 12]
+... ]
+>>> try:
+...     print(matrix_divided(matrix, 0))
+... except ZeroDivisionError as ex:
+...     print(ex.args[0])
+division by zero
