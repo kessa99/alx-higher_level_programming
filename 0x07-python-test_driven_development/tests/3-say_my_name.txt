@@ -1,0 +1,31 @@
+                        Import module
+                        =============
+>>> from importlib import import_module
+>>> say_my_name = import_module('3-say_my_name').say_my_name
+
+                        Valid writing
+                       ===============
+
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+>>> say_my_name("Walter", "White")
+My name is Walter White
+
+>>> say_my_name("Bob")
+My name is Bob 
+
+                        Invalid Writing
+                       =================
+
+>>> try:
+...     say_my_name(12, "white")
+... except TypeError as ex:
+...     print(ex.args[0])
+first_name must be a string
+
+>>> try:
+...     say_my_name("David", 12)
+... except TypeError as ex:
+...     print(ex.args[0])
+last_name must be a string
